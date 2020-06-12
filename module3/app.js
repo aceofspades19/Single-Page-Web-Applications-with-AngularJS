@@ -65,6 +65,7 @@
     
       service.getMatchedMenuItems = function (searchTerm) {
         var ApiBasePath = "https://davids-restaurant.herokuapp.com";
+        items = [];
         function onlyUnique(value, index, self) { 
             return self.indexOf(value) === index;
         }
