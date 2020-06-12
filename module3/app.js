@@ -74,7 +74,7 @@
             url: (ApiBasePath + "/menu_items.json"),
           }).then(function(result){
               result.data.menu_items.forEach(element => {
-                   if(element.name.indexOf(searchTerm) != -1){
+                   if(element.name.toLowerCase().indexOf(searchTerm.toLowerCase()) != -1){
                        items.push(element.name + " " + element.short_name + " " + element.description);
                    }
               });
