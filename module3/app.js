@@ -75,7 +75,7 @@
           }).then(function(result){
               result.data.menu_items.forEach(element => {
                    if(element.name.indexOf(searchTerm) != -1){
-                       items.push(element.name);
+                       items.push(element.name + " " + element.short_name + " " + element.description);
                    }
               });
               items = items.filter(onlyUnique);
