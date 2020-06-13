@@ -1,17 +1,31 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
   <head>
-    <title>Resturaunt</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="angular.min.js"></script>
-    <script src="angular-ui-router.min.js"></script>
-    <script src="app.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Restaurant</title>
   </head>
-<body ng-app="MenuApp">
-  <h1>Welcome!</h1>
-  <a href="">Items</a>
-  <a href="">Categories</a>
-</body>
+  <body>
+    <h1>Restaurant</h1>
+
+    <ui-view></ui-view>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menu/menuapp.module.js"></script>
+    <script src="src/data/data.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- Data module artifacts -->
+    <script src='src/data/component/categories.component.js'></script>
+    <script src='src/data/component/items.component.js'></script>
+    <script src='src/data/controller/categoryList.controller.js'></script>
+    <script src='src/data/controller/itemList.controller.js'></script>
+    <script src='src/data/service/menudata.service.js'></script>
+  </body>
 </html>
