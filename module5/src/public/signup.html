@@ -1,0 +1,79 @@
+<fieldset>
+
+    <legend class="heading">Newsletter Registration</legend>
+
+    <form name="NewsletterForm" novalidate="" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email ng-valid-pattern">
+        <table align="center">
+            <tbody><!-- ngIf: reg.showMsg -->
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched" ng-model="reg.user.firstName" name="firstName" placeholder="First Name" required="">
+                    </div><br>
+
+                </td>
+                <td><!-- ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched --><span ng-if="NewsletterForm.firstName.$error.required &amp;&amp; NewsletterForm.firstName.$touched" class="ng-scope">*Please
+                        enter your first name</span><!-- end ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched -->
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="lastName" ng-model="reg.user.lastName" placeholder="Last Name" required="">
+                    </div><br>
+                </td>
+                    <td><!-- ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched --><span ng-if="NewsletterForm.lastName.$error.required &amp;&amp; NewsletterForm.lastName.$touched" class="ng-scope">*Please
+                        enter your last name</span><!-- end ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched -->
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-envelope"></i></span>
+                        <input type="email" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" ng-model="reg.user.email" name="email" placeholder="Email-Id" required="">
+                    </div><br>
+                </td>
+                <td><!-- ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched --><span ng-if="NewsletterForm.email.$error.required &amp;&amp; NewsletterForm.email.$touched" class="ng-scope">*Must be a valid email address: handle@domain format</span><!-- end ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched -->
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-phone"></i></span>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required ng-valid-pattern" name="phone" placeholder="###-###-####" ng-model="reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})" required="">
+                    </div><br>
+                </td>
+                <td><!-- ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched --><span ng-if="NewsletterForm.phone.$error.required &amp;&amp; NewsletterForm.phone.$touched" class="ng-scope">*Phone must be in the format ###-###-####</span><!-- end ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched -->
+            </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="glyphicon glyphicon-ice-lolly-tasted"></i></span>
+                        <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" ng-model="reg.user.food" name="food" ng-blur="reg.validateFood()" placeholder="Favorite Dish" required>
+                    </div><br>
+                </td>
+                <td><!-- ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched --><span ng-if="reg.invalidFavourite" class="ng-scope">*Menu Item Invalid</span><!-- end ngIf: NewsletterForm.firstName.$error.required && NewsletterForm.firstName.$touched -->
+            </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button ng-disabled="NewsletterForm.$invalid " type="button" class="btn btn-default" ng-click="reg.submit()" disabled="disabled">Save</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span ng-if="!NewsletterForm.$invalid && !reg.invalidFavourite" class="ng-scope">Form saved successfully!</span>
+                </td>
+            </tr>
+        </tbody></table>
+    </form>
+</fieldset>
