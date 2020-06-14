@@ -45,6 +45,7 @@
       list.addItems = function () {
         menuList.getMatchedMenuItems(list.searchTerm).then(function(){
             list.found = menuList.getItems(); 
+            console.log(list.found); 
         });
         
       };
